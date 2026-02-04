@@ -1,26 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'services/notification_service.dart';
-import 'screens/music_player_screen.dart';
-
-import 'package:just_audio_background/just_audio_background.dart';
+import 'screens/video_player_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  await JustAudioBackground.init(
-    androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
-    androidNotificationChannelName: 'Audio playback',
-    androidNotificationOngoing: true,
-  );
-
-  // Initialize notification service
-  try {
-    await NotificationService().initialize();
-  } catch (e) {
-    debugPrint('Notification init error: $e');
-  }
-
   runApp(const MyApp());
 }
 
@@ -30,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Music Player',
+      title: 'Video Player',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -71,7 +54,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
         create: (_) => MusicPlayerProvider(),
-        child: const MusicPlayerScreen(),
+        child: const VideoPlayerScreen(),
       ),
     );
   }

@@ -35,16 +35,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   
-  # Audio playback
-  just_audio: ^0.9.36
-  just_audio_background: ^0.0.1-beta.13
-  audio_service: ^0.18.12
+  # Video playback
+  video_player: ^2.8.2
+  youtube_player_flutter: ^9.1.1
   
-  # Notifications
-  flutter_local_notifications: ^17.0.0
+  # Background notification controls (audio as silent proxy)
+  audio_service: ^0.18.12
+  just_audio: ^0.9.36
+  audio_session: ^0.1.21
   
   # Permissions
-  permission_handler: ^11.2.0
+  permission_handler: ^11.4.0
   
   # State management
   provider: ^6.1.1
